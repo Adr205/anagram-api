@@ -92,7 +92,7 @@ postRoutes.get(
       "Allow-Control-Allow-Origin": "*",
     }
 
-    res.setHeader('Content-Type', 'image/jpg');
+    res.setHeader('Content-Type', 'json/application');
     res.setHeader('Allow-Control-Allow-Origin', '*');
     
     res.sendFile(pathImg);
