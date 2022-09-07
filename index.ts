@@ -1,6 +1,6 @@
 import Server from "./classes/server";
 import mongoose from "mongoose";
-
+import express from 'express';
 import bodyParser from "body-parser";
 import fileUpload from "express-fileupload";
 import cors from "cors";
@@ -30,6 +30,8 @@ server.app.use(cors({ origin: true, credentials: true }));
 server.app.use("/anagram/api/user", userRoutes);
 server.app.use("/anagram/api/post", postRoutes);
 
+//public folder
+server.app.use(express.static(__dirname + "/uploads"));
 //DB connection
 mongoose.connect(
   URI, 
