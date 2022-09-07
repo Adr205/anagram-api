@@ -24,7 +24,7 @@ server.app.use(bodyParser.json());
 server.app.use(fileUpload({ useTempFiles: true }));
 
 //cors
-server.app.use(cors({ origin: true, credentials: true }));
+server.app.use(cors({ origin: true, credentials: true, }));
 
 //Rutas
 server.app.use("/anagram/api/user", userRoutes);

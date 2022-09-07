@@ -83,6 +83,11 @@ postRoutes.get("/image/:userid/:img", [autentication_1.verifyToken], (req, res) 
     const userId = req.params.userid;
     const img = req.params.img;
     const pathImg = fileSystem.getImageUrl(userId, img);
+    const headers = {
+        "Content-Type": "image/jpg",
+        "Allow-Control-Allow-Origin": "*",
+    };
+    res.writeHead(200, headers);
     res.sendFile(pathImg);
 });
 exports.default = postRoutes;
