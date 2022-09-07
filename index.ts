@@ -13,7 +13,7 @@ import postRoutes from './routes/post';
 
 
 
-const URI = process.env.MONGO_URI || '';
+const URI = process.env.MONGO_URI || 'mongodb://localhost:27017/fotosgram';
 const server = new Server();
 
 // Body parser
@@ -27,8 +27,8 @@ server.app.use(fileUpload({ useTempFiles: true }));
 server.app.use(cors({ origin: true, credentials: true }));
 
 //Rutas
-server.app.use("/user", userRoutes);
-server.app.use("/post", postRoutes);
+server.app.use("/anagram/api/user", userRoutes);
+server.app.use("/anagram/api/post", postRoutes);
 
 //DB connection
 mongoose.connect(

@@ -87,7 +87,14 @@ postRoutes.get(
 
     const pathImg = fileSystem.getImageUrl(userId, img);
 
+    const headers = {
+      "Content-Type": "image/jpg",
+      "Allow-Control-Allow-Origin": "*",
+    }
+
+    res.writeHead(200, headers);
     res.sendFile(pathImg);
+    
   }
 );
 
